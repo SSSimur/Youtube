@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="regButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="Next"
+        android:textSize="15sp"
+        android:width="350sp"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_button"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="start_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="Start"
+        android:textSize="15sp"
+        android:width="350sp"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_button"
+        android:alpha="0"
+        android:textAllCaps="false"/>
+
+    <ImageView
+        android:id="@+id/car1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/car1" />
+
+    <ImageView
+        android:id="@+id/car2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_toRightOf="@id/car1"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/car2" />
+
+    <ImageView
+        android:id="@+id/car3"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@id/car2"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/car3" />
+
+
+</RelativeLayout>
