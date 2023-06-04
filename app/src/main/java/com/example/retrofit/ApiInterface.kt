@@ -32,8 +32,6 @@ interface ApiInterface {
 
     @GET("/wallets")
     suspend fun getWallets(
-        @Query("title") title:String,
-        @Query("balance") balance:String
     ): retrofit2.Response<AllWalletData>
 
 
