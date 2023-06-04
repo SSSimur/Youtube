@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".CreateWallet"
+            android:exported="false" />
+        <activity
             android:name=".ExpenseHistoryActivity"
             android:exported="false" />
         <activity
