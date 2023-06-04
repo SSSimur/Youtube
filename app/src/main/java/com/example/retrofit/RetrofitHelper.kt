@@ -12,8 +12,6 @@ public object RetrofitHelper {
         return  Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .addConverterFactory(ScalarsConverterFactory.create())
             .build()
-
     }
 }

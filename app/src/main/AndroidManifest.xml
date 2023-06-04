@@ -16,11 +16,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ExpenseHistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeView"
             android:exported="false" />
         <activity
             android:name=".Registration"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="false" />
@@ -36,7 +39,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:label="YourAppName"></activity>
+            android:label="YourAppName" />
     </application>
 
 </manifest>

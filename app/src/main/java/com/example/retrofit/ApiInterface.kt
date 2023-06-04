@@ -1,5 +1,6 @@
 package com.example.retrofit
 
+import com.example.models.AllWalletData
 import com.example.models.LoginRequest
 import com.example.models.LoginResponse
 import com.example.models.User
@@ -32,5 +33,15 @@ interface ApiInterface {
     //Test
     @GET ("/auth")
     suspend fun test(): retrofit2.Response<String>
+
+    @GET("/wallets")
+    suspend fun getWallets(
+        @Query("title") title:String,
+        @Query("balance") balance:String
+    ): retrofit2.Response<AllWalletData>
+
+
+
+
 
 }

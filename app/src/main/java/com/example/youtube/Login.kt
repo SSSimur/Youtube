@@ -7,8 +7,10 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.models.LoginRequest
 import com.example.models.User
+import com.example.preferences.SharedPreferences
 import com.example.retrofit.ApiInterface
 import com.example.retrofit.RetrofitHelper
 import com.example.youtube.databinding.ActivityLoginBinding
@@ -27,6 +29,7 @@ open class Login : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var apiInterface: ApiInterface
+    private lateinit var prefs: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +43,7 @@ open class Login : AppCompatActivity() {
 //            Log.d("testemail: ",email)
 
 //            binding.
+            prefs = SharedPreferences(this);
             apiInterface = RetrofitHelper.getInstance().create(ApiInterface::class.java)
             CoroutineScope(Dispatchers.IO).launch {
 //                val message: String? = apiInterface.test().toString()
@@ -57,7 +61,7 @@ open class Login : AppCompatActivity() {
                         if (response.isSuccessful) {
                             val user = response.body()
                             Log.d("ayush: UserInfo", user.toString())
-                            tokenDecoding(user!!.access_token)
+                            prefs.recieveToken(user!!.access_token)
                             val homePage = Intent(this@Login, MainActivity::class.java)
                             startActivity(homePage)
                             finish()
@@ -84,28 +88,14 @@ open class Login : AppCompatActivity() {
         }
     }
 
+
     //         kuat@gmail.com
     //         qwerty
 
 
     //Caching the token
 
-    public fun tokenDecoding(token: String) {
-        val secretKey: SecretKey = Keys.hmacShaKeyFor(SECRET_KEY.toByteArray())
-        val jws = Jwts.parserBuilder()
-            .setSigningKey(secretKey)
-            .build()
-            .parseClaimsJws(token!!.split(" ")[1].trim())
-        val body = jws.body
-        val email = body["email"].toString()
-        val id = body["id"].toString()
-        val sharedPref = getSharedPreferences("myPref", MODE_PRIVATE)
-        val editor = sharedPref.edit()
-        editor.putString("token", token)
-        editor.putString("email", email)
-        editor.putString("id", id)
-        editor.apply()
-    }
+
 
 
     fun createacc(view: View) {
