@@ -90,4 +90,14 @@ class HomeView : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.container, fragment)
         fragmentTransaction.commit() }
+
+    fun EditProfileData(view: View) {
+        val intent = Intent(this, EditProfile::class.java)
+        startActivity(intent)
+    }
+
+    fun create_wallet_button(view: View) {
+        val intent = Intent(this, CreateWallet::class.java)
+        startActivity(intent)
+    }
 }
