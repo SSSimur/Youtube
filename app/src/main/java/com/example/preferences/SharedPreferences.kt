@@ -19,16 +19,16 @@ public class SharedPreferences(context: Context) {
         editor.apply()
     }
 
-    fun getToken(): String? {
-        return prefs.getString("token", null)
+    fun getToken(): String {
+        return prefs.getString("token", null)!!
     }
 
-    fun getEmail(): String? {
-        return prefs.getString("email", null)
+    fun getEmail(): String {
+        return prefs.getString("email", null)!!
     }
 
-    fun getId(): String? {
-        return prefs.getString("id", null)
+    fun getId(): Int {
+        return prefs.getString("id", null)!!.toInt()
     }
 
     fun removeToken() {

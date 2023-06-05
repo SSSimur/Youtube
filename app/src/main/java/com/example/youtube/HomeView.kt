@@ -1,5 +1,6 @@
 package com.example.youtube
 
+import HistoryFragment
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -51,22 +52,6 @@ class HomeView : AppCompatActivity() {
         setContentView(binding.root)
 
         apiInterface = RetrofitHelper.getInstance().create(ApiInterface::class.java)
-//        GlobalScope.launch(Dispatchers.IO) {
-//            try {
-//                val response = apiInterface.getWallets()
-//                binding.apply {
-//                    progressBar.visibility = View.GONE
-//                    walletRvAdapter = WalletRvAdapter(walletList)
-//                }
-//                if (response.isSuccessful && response.body() != null) {
-//                    val walletData :List<WalletData> = response.body()!!
-//                }
-//            } catch (e: HttpException) {
-//            }
-//        }
-
-
-
 
         binding.bottomNav.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {

@@ -28,50 +28,22 @@ class   HomeFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-//        GlobalScope.launch(Dispatchers.IO) {
-//            val response = try {
-//                RetrofitIntance.api.login(email, password);
-//
-//            } catch (e: HttpException) {
-//                Toast.makeText(applicationContext, "http error ${e.message}", Toast.LENGTH_LONG)
-//                    .show()
-//                return@launch
-//            } catch (e: IOException) {
-//                Toast.makeText(applicationContext, "app error ${e.message}", Toast.LENGTH_LONG)
-//                    .show()
-//                return@launch
-//            }
-//            System.out.println(response);
-//
-//            if (response.isSuccessful && response.body() != null) {
-//                withContext(Dispatchers.Main) {
-//                    Snackbar.make(
-//                        binding.root,
-//                        "code: ${response.code()}",
-//                        Snackbar.LENGTH_INDEFINITE
-//                    )
-//                        .show()
-//                    binding.apply {
-//
-//                    }
-//                }
-//            }
 
-        }
+    }
 
 
 
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
 
 
-        ): View? {
-            // Inflate the layout for this fragment
-            return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false)
 
 
-        }
+    }
 
 
     }
